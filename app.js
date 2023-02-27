@@ -1,4 +1,4 @@
-const firstName = process.argv[0];
-const lastName = process.argv[3];
- 
-console.log(`Hello ${firstName} ${lastName}`);
+const moment = require("moment/moment");
+const date = moment().format("M Do YY");
+
+console.log(date)
