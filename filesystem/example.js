@@ -12,7 +12,8 @@ const fileReadCallback = (error, data) => {
 // //async
 // fs.readFile('todo.txt', 'utf-8', fileReadCallback)
 
-//sync
 
+
+//sync
 const data = fs.readFileSync('todo.txt','UTF-8')
 console.log(data)
