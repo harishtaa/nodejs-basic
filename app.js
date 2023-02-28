@@ -1,18 +1,24 @@
+// const fs = require('fs');
+
+// const readableStream = fs.createReadStream('./articles.txt', {
+//     highWaterMark: 10
+// });
+
+// readableStream.on('readable', () =>{
+//     try {
+//         process.stdout.write(`[${readableStream.read()}]`)
+//     } catch (error) {
+
+//     }
+// })
+
+// readableStream.on('enc', () => {
+//     console.log('Done')
+// })
+
 const fs = require('fs');
+const writeableStream = fs.createWriteStream('output.txt')
 
-const fileReadCallback = (error, data) => {
-    if (error)  {
-        console.log('Gagal membaca berkas')
-        return;
-    }
-    console.log(data)
-
-};
-
-// //async
-// fs.readFile('todo.txt', 'utf-8', fileReadCallback)
-
-//sync
-
-const data = fs.readFileSync('todo.txt','UTF-8')
-console.log(data)
+writeableStream.write('Ini merupakan teks baris pertama\n')
+writeableStream.write('ini merupakan teks baris kedua\n')
+writeableStream.end()
